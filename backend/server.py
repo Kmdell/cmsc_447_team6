@@ -1,7 +1,4 @@
-from crypt import methods
-from email.policy import default
-from urllib import request
-from flask import Flask
+from flask import Flask, request, make_response
 from flask_cors import CORS
 from flask_json import FlaskJSON
 
@@ -9,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 FlaskJSON(app)
 
-endpoints = ["landmarks", "covid", "night_out"]
+endpoints = ["landmarks", "covid", "night_out", "crime"]
 
 def index(endpoint):
     if request.method == "GET":
