@@ -2,12 +2,13 @@ from flask import Flask, request, make_response
 from flask_cors import CORS
 from flask_json import FlaskJSON
 import csv
+import geojson
 
 app = Flask(__name__)
 CORS(app)
 FlaskJSON(app)
 
-endpoints = ["", "landmarks", "covid", "night_out", "crime"]
+endpoints = ["", "landmarks", "zipcodes", "covid", "crime", 'food_vendor']
 
 def landmarks():
     landmarks = []
@@ -28,7 +29,7 @@ def landmarks():
 
 def covid():
     covid_dates = []
-    with open('./baltimore_city_zip_code_totals.csv') as csv_file:
+    with open('../data/baltimore_city_zip_code_totals.csv') as csv_file:
         totals = []
         increments = []
         for line in csv_file.readlines():
@@ -66,6 +67,31 @@ def covid():
             covid_dates.append(temp)
         return covid_dates
 
+def zipcode():
+    with open('../data/md_maryland_zip_codes_geo.min.json') as geojson_file:
+        gjson = geojson.load(geojson_file)
+    return gjson
+
+def crime():
+    response = []
+    with open('../data/Part_1_Crime_Data_.csv') as crime_csv:
+        lines = []
+        for line in crime_csv.readlines()[1:]:
+            lines.append(line.split(',')[:4] + [line.split(',')[6]])
+
+        for i in range(len(lines)):
+            lines[i][3] = lines[i][3].split()[0].replace('/', '_')
+
+        for line in lines:
+            response.append({
+                'date' : line[3],
+                'X' : line[0],
+                'Y' : line[1],
+                'Description' : line[4]
+            })
+    return response
+    
+
 def index(endpoint):
     if request.method == "GET":
         if endpoint == "":
@@ -75,6 +101,10 @@ def index(endpoint):
             return landmarks()
         elif endpoint == "covid":
             return covid()
+        elif endpoint == "zipcodes":
+            return zipcode()   
+        elif endpoint == "crime":
+            return crime()
         else:
             return endpoint
 
