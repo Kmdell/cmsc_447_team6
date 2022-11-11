@@ -32,7 +32,7 @@ with open('./baltimore_city_zip_code_totals.csv') as csv_file:
         for j in range(1, len(totals)):
             temp[totals[j][0]] = {
                 'total' : totals[j][i],
-                'increment' : increments[j][i]
+                'change' : increments[j][i]
             }
         covid_dates.append(temp)
     

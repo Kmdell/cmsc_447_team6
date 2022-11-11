@@ -62,7 +62,7 @@ def covid():
             for j in range(1, len(totals)):
                 temp[totals[j][0]] = {
                     'total' : totals[j][i],
-                    'increment' : increments[j][i]
+                    'change' : increments[j][i]
                 }
             covid_dates.append(temp)
         return covid_dates
@@ -91,6 +91,21 @@ def crime():
             })
     return response
     
+def food():
+    response = []
+    with open('./Food_Vendor_Locations.csv') as crime_csv:
+        lines = []
+        for line in crime_csv.readlines()[1:]:
+            lines.append(line.split(','))
+        
+        for i in range(len(lines)):
+            for j in range(len(lines[i])):
+                lines[i][j] = lines[i][j].replace(')"', '').replace('(', '')
+            response.append({
+                'X' : lines[i][-4],
+                'Y' : lines[i][-5]
+            })
+    return response
 
 def index(endpoint):
     if request.method == "GET":
@@ -105,6 +120,8 @@ def index(endpoint):
             return zipcode()   
         elif endpoint == "crime":
             return crime()
+        elif endpoint == "food":
+            return food()
         else:
             return endpoint
 
