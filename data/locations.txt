@@ -1,0 +1,1154 @@
+name: City Hall
+Point:
+X: -8528262.690551654
+Y: 4763398.362336166
+
+name: Otterbein Church
+Point:
+X: -8528996.549360868
+Y: 4762505.411936715
+
+name: McKim Free School
+Point:
+X: -8527201.01873379
+Y: 4763469.944705769
+
+name: First Unitarian Church
+Point:
+X: -8528831.816497322
+Y: 4764068.15380986
+
+name: Ebenezer A.M.E. Church
+Point:
+X: -8528775.27379688
+Y: 4761868.921669319
+
+name: Municipal Museum of Balt (Peale Museum)
+Point:
+X: -8528187.540390026
+Y: 4763565.293940611
+
+name: Lovely Lane Methodist Church (First Methodist)
+Point:
+X: -8528816.662572185
+Y: 4766830.492942527
+
+name: Lloyd Street Synagogue
+Point:
+X: -8527206.221120082
+Y: 4763369.317563742
+
+name: Bethel A.M.E. Church
+Point:
+X: -8530298.80293117
+Y: 4765010.465629429
+
+name: Eutaw Place Baptist Church
+Point:
+X: -8529811.144934015
+Y: 4765178.38414631
+
+name: Eastern Female High School
+Point:
+X: -8527241.371367425
+Y: 4763952.813138574
+
+name: Belvedere Hotel
+Point:
+X: -8528797.270791683
+Y: 4765053.867771782
+
+name: Battle Monument
+Point:
+X: -8528452.931094535
+Y: 4763393.82909254
+
+name: St. Paul's P.E. Church
+Point:
+X: -8528735.751728874
+Y: 4763595.547733754
+
+name: St.Paul's P.E. Church Rectory
+Point:
+X: -8528895.716578182
+Y: 4763768.329350479
+
+name: Cylburn House and Park
+Point:
+X: -8532899.453891035
+Y: 4772387.173869215
+
+name: Davidge Hall
+Point:
+X: -8529664.045033822
+Y: 4762891.395616271
+
+name: Mt.Clare Station & Roundhouse
+Point:
+X: -8530702.938503485
+Y: 4762638.1986508
+
+name: Evergreen House
+Point:
+X: -8529388.70601542
+Y: 4771787.706671946
+
+name: Old Post Office Building
+Point:
+X: -8528363.224040769
+Y: 4763413.391673386
+
+name: Homewood House
+Point:
+X: -8529175.015174815
+Y: 4769003.056049272
+
+name: Maryland House
+Point:
+X: -8532225.670319142
+Y: 4768244.608330794
+
+name: Baltimore Arts Tower (Bromo Seltzer)
+Point:
+X: -8529349.800723072
+Y: 4762974.095409349
+
+name: Mercantile Safe Deposit and Trust Building
+Point:
+X: -8528403.553069664
+Y: 4763164.2691059485
+
+name: Star Spangled Banner Flag House
+Point:
+X: -8527449.561005782
+Y: 4762946.0012840405
+
+name: Old Town Friends' Meeting House
+Point:
+X: -8527196.211916476
+Y: 4763564.783906132
+
+name: Mother Seton House
+Point:
+X: -8529679.89623521
+Y: 4764140.051529273
+
+name: Washington Monument and Mount Vernon Place
+Point:
+X: -8528817.705840942
+Y: 4764385.8465259
+
+name: Westminister Presbyterian Church
+Point:
+X: -8529673.071266312
+Y: 4763295.9972365275
+
+name: Basilica of the Assumption
+Point:
+X: -8528905.212431027
+Y: 4763931.951812096
+
+name: H.L. Mencken House
+Point:
+X: -8531729.72884855
+Y: 4762940.087006688
+
+name: Shot Tower
+Point:
+X: -8527675.886370568
+Y: 4763403.697534382
+
+name: St. Vincent De Paul Church
+Point:
+X: -8527773.525292838
+Y: 4763489.189374991
+
+name: Old Cathedral School
+Point:
+X: -8528868.970338233
+Y: 4763867.412382044
+
+name: Edgar Allan Poe House
+Point:
+X: -8530752.441506159
+Y: 4763481.917834647
+
+name: Thomas-Jencks-Gladding-Hackerman House
+Point:
+X: -8528855.146386037
+Y: 4764327.3950717375
+
+name: Clifton Mansion
+Point:
+X: -8525632.232832655
+Y: 4767746.157244235
+
+name: Roland Park Shopping Center
+Point:
+X: -8531032.771756496
+Y: 4771987.391990006
+
+name: St.Mary's Seminary Chapel
+Point:
+X: -8529672.673359154
+Y: 4764144.706453152
+
+name: B'nai Israel Synagogue
+Point:
+X: -8527189.176681392
+Y: 4763297.918528944
+
+name: First Baptist Church
+Point:
+X: -8526763.389597647
+Y: 4764302.336173572
+
+name: Sharon Baptist Church
+Point:
+X: -8531704.165667867
+Y: 4765495.599965893
+
+name: Taylor's Chapel and Burial Ground
+Point:
+X: -8524548.792106837
+Y: 4773757.963366389
+
+name: Zion Lutheran Church and Parish House
+Point:
+X: -8528147.438475216
+Y: 4763530.841162048
+
+name: Furness House
+Point:
+X: -8528258.549644861
+Y: 4763136.007044785
+
+name: Goucher House
+Point:
+X: -8528744.384823592
+Y: 4767023.121832132
+
+name: United States Customs House
+Point:
+X: -8528080.868945606
+Y: 4763019.243561156
+
+name: Pennsylvania Station
+Point:
+X: -8528813.571544545
+Y: 4765798.661094405
+
+name: Ascot House (Razed 1981)
+Point:
+X: -8529457.733785704
+Y: 4769990.66902408
+
+name: Babe Ruth House
+Point:
+X: -8529833.989355566
+Y: 4762662.094268233
+
+name: War Memorial
+Point:
+X: -8528026.584900768
+Y: 4763435.762619168
+
+name: Alexander Brown and Sons
+Point:
+X: -8528461.816920215
+Y: 4763217.867063582
+
+name: Baltimore City Courthouse
+Point:
+X: -8528495.63767408
+Y: 4763413.82716734
+
+name: Carroll Hunting Lodge
+Point:
+X: -8535351.912099475
+Y: 4774092.029013649
+
+name: Continental Trust Building
+Point:
+X: -8528403.646763813
+Y: 4763216.567084134
+
+name: Crimea House, Chapel and Stables
+Point:
+X: -8538077.224498002
+Y: 4765470.133675896
+
+name: Etting Cemetary
+Point:
+X: -8531710.168831946
+Y: 4766212.900209285
+
+name: Gallagher Mansion
+Point:
+X: -8528339.413959775
+Y: 4772150.038080201
+
+name: James Lawrence Kernan Hospital
+Point:
+X: -8539111.940671604
+Y: 4766777.316834904
+
+name: Leadenhall Baptist Church
+Point:
+X: -8529015.66460404
+Y: 4761461.105486773
+
+name: Mount Clare Mansion
+Point:
+X: -8531853.114676785
+Y: 4761708.197446689
+
+name: Mount Royal Station and Shed
+Point:
+X: -8529282.973935919
+Y: 4765530.86637114
+
+name: Bread of Life Cathedral
+Point:
+X: -8528985.724361764
+Y: 4764062.051699869
+
+name: Saint Frances Academy
+Point:
+X: -8528046.081549713
+Y: 4765069.856251739
+
+name: Saint Leo's Church
+Point:
+X: -8527170.684020357
+Y: 4762903.649526805
+
+name: Saint Peter Claver Church
+Point:
+X: -8531383.004973307
+Y: 4765662.221366309
+
+name: Sharp Street United Methodist Church
+Point:
+X: -8530237.34635364
+Y: 4764846.670011282
+
+name: Fort McHenry
+Point:
+X: -8524826.51883168
+Y: 4759450.833957054
+
+name: G. Krug & Sons
+Point:
+X: -8529514.88286371
+Y: 4763678.03467308
+
+name: Hutzler's Palace Building
+Point:
+X: -8529299.027394427
+Y: 4763643.68478509
+
+name: Octagon Building, U.S.F & G
+Point:
+X: -8533177.054786716
+Y: 4774702.206054553
+
+name: Mount Auburn Cemetary
+Point:
+X: -8531388.818768207
+Y: 4758845.422537647
+
+name: Booker T. Washington Jr. High School
+Point:
+X: -8530165.644812565
+Y: 4765221.820469759
+
+name: Walters Bath House and Engine House #10
+Point:
+X: -8530545.111785578
+Y: 4762299.396209434
+
+name: Warden's House -Baltimore City Jail
+Point:
+X: -8528160.333732529
+Y: 4764545.615816861
+
+name: Robert Long House
+Point:
+X: -8526110.260053752
+Y: 4762176.765276171
+
+name: Greenway Cottages
+Point:
+X: -8530519.203998849
+Y: 4770108.550788581
+
+name: 1124-1126 Riverside Avenue
+Point:
+X: -8528081.273710925
+Y: 4761384.179657705
+
+name: Provident Bank of Maryland
+Point:
+X: -8529282.017375607
+Y: 4763690.64638716
+
+name: Southern Hotel
+Point:
+X: -8528550.452952622
+Y: 4763159.382990889
+
+name: Macht Building
+Point:
+X: -8528689.235782934
+Y: 4763334.846665949
+
+name: Old Federal Reserve Bank
+Point:
+X: -8528482.911744058
+Y: 4763485.8749638945
+
+name: Chamber of Commerce Building
+Point:
+X: -8528172.480096979
+Y: 4763135.888020955
+
+name: Old Saint Paul's Cemetary
+Point:
+X: -8530108.46476872
+Y: 4762988.198335208
+
+name: Wooden Houses
+Point:
+X: -8525975.915791202
+Y: 4762485.519054256
+
+name: Pascault Row
+Point:
+X: -8529984.81567135
+Y: 4763459.867406882
+
+name: The Baltimore Museum of Art & Spring House
+Point:
+X: -8529225.073243164
+Y: 4768422.1452405825
+
+name: Hutzler's Tower Building
+Point:
+X: -8529274.369893905
+Y: 4763634.40824189
+
+name: Johns Hopkins University, Gilman Hall
+Point:
+X: -8529354.516277835
+Y: 4769137.514168553
+
+name: The D'alesandro House
+Point:
+X: -8527319.460885324
+Y: 4762757.913309634
+
+name: St. Joseph's Passionist Monastery
+Point:
+X: -8535930.963539489
+Y: 4762293.710355282
+
+name: Orchard Street Church
+Point:
+X: -8529746.592274902
+Y: 4764388.108850867
+
+name: Douglass Memorial Community Church
+Point:
+X: -8530150.971397597
+Y: 4765303.360433064
+
+name: Buena Vista
+Point:
+X: -8534539.313428665
+Y: 4765817.248009227
+
+name: George Howard House
+Point:
+X: -8528745.905002961
+Y: 4764562.541050933
+
+name: Charles Theater
+Point:
+X: -8528869.741804773
+Y: 4766062.113247253
+
+name: Saint Katherine of Alexandria Protestant Episcopal
+Point:
+X: -8531121.83103333
+Y: 4765734.999265872
+
+name: Hecht Company Building
+Point:
+X: -8529291.652656654
+Y: 4763559.09502539
+
+name: Congress Hotel
+Point:
+X: -8529343.617413715
+Y: 4764034.63649746
+
+name: Carlton Street Stables
+Point:
+X: -8531071.955403218
+Y: 4762748.789571598
+
+name: Patterson Theater
+Point:
+X: -8523927.01046293
+Y: 4762813.79603523
+
+name: Standard Oil Building
+Point:
+X: -8528559.970254498
+Y: 4764084.691189319
+
+name: Friends Burial Ground
+Point:
+X: -8526519.21988823
+Y: 4767354.207136102
+
+name: Northern District Police Station
+Point:
+X: -8530140.966445835
+Y: 4768836.177912898
+
+name: Samuel Coleridge Taylor Elementary School No. 122
+Point:
+X: -8530013.841464857
+Y: 4764549.121318527
+
+name: Grace Hampden Methodist Church
+Point:
+X: -8530803.967171952
+Y: 4769238.160477772
+
+name: DuVal/Hirschhorn House
+Point:
+X: -8530899.38310926
+Y: 4774918.811136104
+
+name: Patricia Grace Thomas Inn
+Point:
+X: -8537894.590075495
+Y: 4762101.383434892
+
+name: Engine House No. 6
+Point:
+X: -8527685.479134174
+Y: 4764053.1962143555
+
+name: Senator Theatre
+Point:
+X: -8528212.392854769
+Y: 4773869.355840452
+
+name: Scottish Rite Temple
+Point:
+X: -8529156.127015028
+Y: 4769799.326918274
+
+name: Saint Matthew United Church of Christ
+Point:
+X: -8524744.48448174
+Y: 4768652.931141287
+
+name: Union Baptist Church
+Point:
+X: -8530183.115183264
+Y: 4764993.0956202
+
+name: Dr. John E.T. Camper House
+Point:
+X: -8531340.177088289
+Y: 4764229.513163328
+
+name: Ruscombe Mansion
+Point:
+X: -8533424.78686607
+Y: 4771879.826130293
+
+name: Christ Church United Church of Christ
+Point:
+X: -8526376.121477768
+Y: 4760757.158084407
+
+name: Johnny Eck House
+Point:
+X: -8525124.981450649
+Y: 4764479.385540597
+
+name: Baltimore City College
+Point:
+X: -8526750.589358656
+Y: 4768472.2094824165
+
+name: New Life Missisonary Baptist Church
+Point:
+X: -8526707.233477242
+Y: 4766283.846678689
+
+name: Cedarwood
+Point:
+X: -8529809.94880026
+Y: 4771967.593992233
+
+name: Masjid Al Haqq
+Point:
+X: -8530758.510652566
+Y: 4765457.385732204
+
+name: Fire Engine Company No. 25
+Point:
+X: -8531153.89611904
+Y: 4766080.835490495
+
+name: Arch Social Club
+Point:
+X: -8531802.626530325
+Y: 4766136.3002131805
+
+name: Douglass Place
+Point:
+X: -8526644.538917538
+Y: 4762548.000869378
+
+name: Divine Mission Apostolic Church
+Point:
+X: -8532074.140952874
+Y: 4763070.512122743
+
+name: Weaver House
+Point:
+X: -8523787.51690851
+Y: 4770249.464057513
+
+name: First English Lutheran Church
+Point:
+X: -8529043.70040135
+Y: 4769840.9653368
+
+name: Cherry Hill Elementary School #159
+Point:
+X: -8529722.390605394
+Y: 4757180.973687626
+
+name: Schwing Motor Company Building
+Point:
+X: -8530205.165214296
+Y: 4768744.120160662
+
+name: The Mount
+Point:
+X: -8536066.080989601
+Y: 4765977.149571307
+
+name: Riverside Park
+Point:
+X: -8527956.64778311
+Y: 4760462.264826588
+
+name: Ameican Brewery
+Point:
+X: -8525617.338632908
+Y: 4766100.822567627
+
+name: Upton Mansion
+Point:
+X: -8530740.158917721
+Y: 4764463.947751872
+
+name: Roland Park Water Tower
+Point:
+X: -8530964.059071533
+Y: 4770663.95161441
+
+name: W.E.B. DuBois House
+Point:
+X: -8524810.081418984
+Y: 4771768.7781736925
+
+name: Bolton Square
+Point:
+X: -8530027.113303548
+Y: 4765576.052276775
+
+name: Castalia
+Point:
+X: -8529571.456128052
+Y: 4770357.590591721
+
+name: St. Stanislaus Kostka Church
+Point:
+X: -8526130.993746366
+Y: 4762320.065350935
+
+name: Four Bay House
+Point:
+X: -8526172.291680196
+Y: 4762357.007403478
+
+name: St. Mark’s Evangelical Lutheran Church
+Point:
+X: -8528773.773135116
+Y: 4766458.650066629
+
+name: Dr. Giering House
+Point:
+X: -8523448.996261215
+Y: 4769085.689862177
+
+name: Harford Commons (William Fuld Company)
+Point:
+X: -8527188.126564333
+Y: 4765874.0431572795
+
+name: Melvin Cade Armory
+Point:
+X: -8533746.204146074
+Y: 4765032.572037563
+
+name: Nazarene Baptist Church
+Point:
+X: -8527275.647108529
+Y: 4765339.094950691
+
+name: Mount Calvary Church
+Point:
+X: -8529498.488309221
+Y: 4764657.869013593
+
+name: Saint Paul Community Baptist Church
+Point:
+X: -8526101.76696804
+Y: 4765961.8145924285
+
+name: Raffel Building
+Point:
+X: -8528900.619778682
+Y: 4760446.748226427
+
+name: Ann Wiggins Brown House
+Point:
+X: -8531753.813347425
+Y: 4765491.859620057
+
+name: Kresge Building
+Point:
+X: -8529055.97465015
+Y: 4763496.047811262
+
+name: Sellers Mansion
+Point:
+X: -8531020.1121036
+Y: 4764469.540210471
+
+name: Latrobe Pavilion
+Point:
+X: -8531227.670586545
+Y: 4767623.319547959
+
+name: Council Grove Pavilion
+Point:
+X: -8532632.351660516
+Y: 4767995.158981316
+
+name: Conservatory
+Point:
+X: -8532167.008591611
+Y: 4767411.74237892
+
+name: Chinese Pavilion
+Point:
+X: -8531810.81280313
+Y: 4767173.698484808
+
+name: Apostolic Faith Church of God
+Point:
+X: -8532570.545802644
+Y: 4766265.321341708
+
+name: Archway over Madison St Entrance
+Point:
+X: -8531569.782620996
+Y: 4766925.5054984465
+
+name: Mansion House
+Point:
+X: -8532316.237301992
+Y: 4768111.1904464215
+
+name: Boat House
+Point:
+X: -8532375.374259163
+Y: 4767799.372791782
+
+name: Chess & Checkers Pavilion
+Point:
+X: -8531737.82092673
+Y: 4767272.589497283
+
+name: Octagonal Pavilion
+Point:
+X: -8531933.85695495
+Y: 4768409.282045744
+
+name: Unnamed Pavilion #1
+Point:
+X: -8532617.601140654
+Y: 4767686.368026301
+
+name: Unnamed Pavilion #2
+Point:
+X: -8532440.647133118
+Y: 4767926.142208777
+
+name: Unnamed Pavilion #4
+Point:
+X: -8531795.934051566
+Y: 4767758.746059321
+
+name: Unnamed Pavilion #5
+Point:
+X: -8531545.940729583
+Y: 4767638.963131838
+
+name: Unnamed Pavilion #3
+Point:
+X: -8532327.76575812
+Y: 4768180.732757196
+
+name: President Street Station
+Point:
+X: -8527346.175077371
+Y: 4762432.323878773
+
+name: Waverly Town Hall
+Point:
+X: -8528154.427466942
+Y: 4768512.419023432
+
+name: Franklin-Delphey Hotel
+Point:
+X: -8529307.439727264
+Y: 4764045.23876977
+
+name: Grand Masonic Temple
+Point:
+X: -8528733.066783836
+Y: 4763554.722796842
+
+name: Mayfair Theater
+Point:
+X: -8529328.171144934
+Y: 4764070.229071341
+
+name: Hansa Haus
+Point:
+X: -8528710.97374903
+Y: 4763146.237118326
+
+name: Grace Turnbull House
+Point:
+X: -8528369.967541987
+Y: 4769529.6303172335
+
+name: St. Peter the Apostle Church Complex
+Point:
+X: -8530681.801875327
+Y: 4763038.588652663
+
+name: St. Peter the Apostle Church Complex
+Point:
+X: -8530599.811833654
+Y: 4763043.067891747
+
+name: St. Peter the Apostle Church Complex
+Point:
+X: -8530605.060378961
+Y: 4763014.566630073
+
+name: St. Peter the Apostle Church Complex
+Point:
+X: -8530573.225632478
+Y: 4763015.640426122
+
+name: Crimea House, Chapel and Stables
+Point:
+X: -8538232.919112962
+Y: 4765785.3691286
+
+name: Crimea House, Chapel and Stables
+Point:
+X: -8538308.584431373
+Y: 4765501.89079538
+
+name: Greenmount Cemetary Chapel and Gates
+Point:
+X: -8528015.818427477
+Y: 4765745.83390528
+
+name: Greenmount Cemetary Chapel and Gates
+Point:
+X: -8527905.96048826
+Y: 4765775.2207321
+
+name: Old Dunbar High School, PS 133
+Point:
+X: -8526826.824662209
+Y: 4764295.798287481
+
+name: Carroll Mansion Complex
+Point:
+X: -8527574.3861934
+Y: 4763102.354792759
+
+name: Peabody Institute
+Point:
+X: -8528764.988300743
+Y: 4764307.597066738
+
+name: Patterson Park Observatory
+Point:
+X: -8525253.113976574
+Y: 4763295.002521709
+
+name: Shelley House
+Point:
+X: -8530717.013447404
+Y: 4769807.510424063
+
+name: Ambassador Theatre
+Point:
+X: -8537629.935506672
+Y: 4769259.6800172925
+
+name: Abell Building
+Point:
+X: -8529374.135947647
+Y: 4763154.4103647545
+
+name: Appold-Faust Building
+Point:
+X: -8529286.745781373
+Y: 4763157.044766575
+
+name: Baltimore Equitable Society
+Point:
+X: -8529381.603270417
+Y: 4763335.156097494
+
+name: Equitable Building
+Point:
+X: -8528471.649168495
+Y: 4763329.7126991
+
+name: Old Town National Bank
+Point:
+X: -8527981.607744347
+Y: 4763715.147298254
+
+name: St. Alphonsus School
+Point:
+X: -8529033.432456631
+Y: 4763701.456983812
+
+name: Terminal Warehouse Building
+Point:
+X: -8528350.037603775
+Y: 4763788.717853725
+
+name: Turnbull Building
+Point:
+X: -8529300.185423313
+Y: 4763157.850820772
+
+name: St. Mark's Evangelical Lutheran Church (Public Interior)
+Point:
+X: -8528770.552522283
+Y: 4766478.788533151
+
+name: Senator Theatre (Public Interior)
+Point:
+X: -8528212.392854769
+Y: 4773869.355840452
+
+name: Historic Frederick Douglass High School
+Point:
+X: -8531785.8354385
+Y: 4765851.84735702
+
+name: Frederick Douglass High School # 450
+Point:
+X: -8533194.788351955
+Y: 4766868.4843264595
+
+name: Florence Crittenton Home
+Point:
+X: -8530474.446683232
+Y: 4768450.651667342
+
+name: Trinity A.M.E. Church
+Point:
+X: -8525674.316758746
+Y: 4765732.058681227
+
+name: Union Mill (Historic Druid Mill)
+Point:
+X: -8531623.90676115
+Y: 4769430.176324926
+
+name: C.J. Youse Building
+Point:
+X: -8528193.091035414
+Y: 4763632.737890698
+
+name: Brinks Building
+Point:
+X: -8528190.810471745
+Y: 4763607.017898418
+
+name: Canton Methodist Episcopal Church
+Point:
+X: -8524057.343979908
+Y: 4762022.932043023
+
+name: Messiah English Lutheran Church
+Point:
+X: -8524148.959874855
+Y: 4761896.253943622
+
+name: Parkway Theatre
+Point:
+X: -8528948.729801968
+Y: 4766278.707477637
+
+name: Monumental Lodge No.3, Improved Benevolent Protect
+Point:
+X: -8530418.127550138
+Y: 4765484.843277089
+
+name: Haven Street Factory
+Point:
+X: -8522896.617166072
+Y: 4763911.048604161
+
+name: Public School No. 103, Henry Highland Garnet Schoo
+Point:
+X: -8530382.635277146
+Y: 4764984.317428738
+
+name: Cross Keys Valve House
+Point:
+X: -8532055.130907113
+Y: 4772835.423943877
+
+name: Enoch Pratt House
+Point:
+X: -8529197.701347632
+Y: 4764316.570862636
+
+name: St. John's in the Village
+Point:
+X: -8528045.945488965
+Y: 4768363.455412693
+
+name: St. John's in the Village
+Point:
+X: -8528051.756449362
+Y: 4768427.229581617
+
+name: St. John's in the Village
+Point:
+X: -8528050.743992165
+Y: 4768308.125238761
+
+name: Rehoboth Church of God in Christ Jesus Apostolic
+Point:
+X: -8534344.549184676
+Y: 4764105.858009554
+
+name: Olmsted Parkways
+Point:
+X: -8526306.129282976
+Y: 4768117.339049496
+
+name: Olmsted Parkways
+Point:
+X: -8527420.980013112
+Y: 4768824.00656002
+
+name: Olmsted Parkways
+Point:
+X: -8534151.684209509
+Y: 4766839.323184267
+
+name: American Legion Federal Post No. 19
+Point:
+X: -8530344.406205438
+Y: 4765408.53097295
+
+name: St. Mark’s Institutional Baptist Church
+Point:
+X: -8532960.550439987
+Y: 4764276.596963145
+
+name: Eastern Avenue Pumping Station
+Point:
+X: -8527453.90254982
+Y: 4762554.752872027
+
+name: Dr. John Ruhrah Elementary Middle (School #228)
+Point:
+X: -8521722.734358301
+Y: 4762483.401115231
+
+name: Patterson Park
+Point:
+X: -8524227.125998281
+Y: 4763021.820529461
+
+name: Patterson Park
+Point:
+X: -8524879.564379703
+Y: 4763093.410091378
+
+name: Patterson Park
+Point:
+X: -8524528.371126883
+Y: 4763142.515224129
+
+name: Greater Faith Baptist Church
+Point:
+X: -8529808.470272535
+Y: 4767974.129974656
+
+name: City Hall Rotunda
+Point:
+X: -8528263.676289344
+Y: 4763422.422277078
+
+name: Chick Webb Recreation Center
+Point:
+X: -8526922.535479562
+Y: 4764420.136936694
+
+name: Harry O. Wilson House
+Point:
+X: -8527213.62594732
+Y: 4771149.5238467455
+
+name: Our Saviour Lutheran Church
+Point:
+X: -8526464.908983871
+Y: 4768869.037263647
+
+name: Hanlon Park
+Point:
+X: -8534553.757612973
+Y: 4767423.434203237
