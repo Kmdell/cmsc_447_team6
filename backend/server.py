@@ -93,7 +93,7 @@ def crime():
     
 def food():
     response = []
-    with open('./Food_Vendor_Locations.csv') as crime_csv:
+    with open('../data/Food_Vendor_Locations.csv') as crime_csv:
         lines = []
         for line in crime_csv.readlines()[1:]:
             lines.append(line.split(','))
@@ -120,7 +120,7 @@ def index(endpoint):
             return zipcode()   
         elif endpoint == "crime":
             return crime()
-        elif endpoint == "food":
+        elif endpoint == "food_vendor":
             return food()
         else:
             return endpoint
