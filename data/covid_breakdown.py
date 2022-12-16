@@ -1,3 +1,7 @@
+import sqlite3
+con = sqlite3.connect('dashboard.db')
+cur = con.cursor()
+
 covid_dates = []
 with open('./baltimore_city_zip_code_totals.csv') as csv_file:
     totals = []
@@ -12,7 +16,7 @@ with open('./baltimore_city_zip_code_totals.csv') as csv_file:
             totals[i][j] = int(totals[i][j])
     
     for i in range(1, len(totals[0])):
-        totals[0][i] = totals[0][i].strip('total').strip('\n')
+        totals[0][i] = totals[0][i].strip('total').strip('\n').replace('_', '/')
 
     increments.append(totals[:1])
     for i in range(len(totals) - 1):
@@ -25,16 +29,14 @@ with open('./baltimore_city_zip_code_totals.csv') as csv_file:
                 increments[i].append(totals[i][j] - 0)
             else:
                 increments[i].append(totals[i][j] - totals[i][j - 1])
-
-    for i in range(1, len(totals[0])):
-        temp = {}
-        temp['date'] = totals[0][i]
-        for j in range(1, len(totals)):
-            temp[totals[j][0]] = {
-                'total' : totals[j][i],
-                'change' : increments[j][i]
-            }
-        covid_dates.append(temp)
     
-    print(covid_dates, len(covid_dates))
+    input = []
+    k = 0
+    for i in range(1, len(totals[0])):
+        for j in range(1, len(totals)):
+            input.append((str(k), str(totals[j][0]), str(totals[0][i]), str(totals[j][i]), str(increments[j][i])))
+            k += 1
+        
+    cur.executemany("INSERT INTO covid VALUES(?, ?, ?, ?, ?)", input)
+    con.commit()
     
