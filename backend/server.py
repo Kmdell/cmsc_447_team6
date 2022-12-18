@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask_json import FlaskJSON
 import sqlite3
 import threading
-import geojson
+import json
 
 app = Flask(__name__)
 CORS(app)
@@ -43,8 +43,8 @@ def covid():
     return covid_dates
 
 def zipcode():
-    with open('../data/md_maryland_zip_codes_geo.min.json') as geojson_file:
-        gjson = geojson.load(geojson_file)
+    with open('../data/zipcode_geoJSON.json') as geojson_file:
+        gjson = json.load(geojson_file)
     return gjson
 
 def crime():
