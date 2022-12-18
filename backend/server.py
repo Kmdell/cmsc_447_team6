@@ -3,7 +3,6 @@ from flask_cors import CORS
 from flask_json import FlaskJSON
 import sqlite3
 import threading
-import csv
 import geojson
 
 app = Flask(__name__)
@@ -68,7 +67,6 @@ def crime():
                 crime[i[5]] = {'ID': int(i[0]), 'x': float(i[1]), 'y': float(i[2]), 'location': i[4], 'type': i[5]}
                 old_date = new_date[:]
     lock.release()
-    print(crime_dates)
     return crime_dates
     
 def food():
