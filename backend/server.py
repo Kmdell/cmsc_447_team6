@@ -19,7 +19,7 @@ def landmarks():
     lock.acquire()
     resp = cur.execute("SELECT * FROM loc")
     for i in resp.fetchall():
-        landmarks.append({'ID': int(i[0]), 'name': i[1], 'x': float(i[2]), 'y': float(i[3])})
+        landmarks.append({'ID': int(i[0]), 'name': i[1], 'x': float(i[2]) / 100000, 'y': float(i[3]) / 100000})
     lock.release()
     return landmarks
 
