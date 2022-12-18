@@ -1,0 +1,1 @@
+The __parse.py files are for automatically adding the entire contents of a csv file to the database. dbEstablish.py can rebuild the entire database using the contents of 447proj.sql.
