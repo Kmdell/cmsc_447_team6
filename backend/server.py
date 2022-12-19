@@ -1,3 +1,7 @@
+"""
+Name: Kyle Dell
+CMSC447
+"""
 from flask import Flask, request, make_response
 from flask_cors import CORS
 from flask_json import FlaskJSON
@@ -18,7 +22,7 @@ def landmarks():
     lock.acquire()
     resp = cur.execute("SELECT * FROM loc")
     for i in resp.fetchall():
-        landmarks.append({'ID': int(i[0]), 'name': i[1], 'x': float(i[2]) / 100000, 'y': float(i[3]) / 100000})
+        landmarks.append({'ID': int(i[0]), 'name': i[1], 'x': float(i[2]) / 111317.293, 'y': float(i[3]) / 121234.446})
     lock.release()
     return landmarks
 
