@@ -30,7 +30,9 @@ def covid():
     old_date = ''
     new_date = ''
     for i in resp.fetchall():
-        new_date = i[2]
+        split_date = i[2].split('/')
+
+        new_date = split_date[2] + '/' + split_date[0] + '/' + split_date[1]
         if old_date == '' or old_date == new_date:
             covid[i[1]] = {'ID': int(i[0]), 'total': int(i[3]), 'change': int(i[4])}
             old_date = new_date[:]
@@ -48,7 +50,7 @@ def zipcode():
     return gjson
 
 def crime():
-    crime = {}
+    crime = []
     crime_dates = {}
     lock.acquire()
     resp = cur.execute("SELECT * FROM crime")
@@ -58,13 +60,13 @@ def crime():
         new_date = i[3].split(' ')[0]
         if old_date == '' or old_date == new_date:
             if i[1] != '' and i[2] != '':
-                crime[i[5]] = {'ID': int(i[0]), 'x': float(i[1]), 'y': float(i[2]), 'location': i[4], 'type': i[5]}
+                crime.append({'ID': int(i[0]), 'x': float(i[1]), 'y': float(i[2]), 'location': i[4], 'type': i[5]})
                 old_date = new_date[:]
         else:
             if i[1] != '' and i[2] != '':
                 crime_dates[old_date] = crime
-                crime = {}
-                crime[i[5]] = {'ID': int(i[0]), 'x': float(i[1]), 'y': float(i[2]), 'location': i[4], 'type': i[5]}
+                crime = []
+                crime.append({'ID': int(i[0]), 'x': float(i[1]), 'y': float(i[2]), 'location': i[4], 'type': i[5]})
                 old_date = new_date[:]
     lock.release()
     return crime_dates
