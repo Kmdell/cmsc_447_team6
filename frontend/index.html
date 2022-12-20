@@ -1,0 +1,556 @@
+<!doctype html>
+<html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src = "main.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<body>
+
+<link rel="stylesheet" href="index.css">
+
+
+
+<div class = "banner">
+  <header>Crime and Covid Data Visualization</header>
+  <div class = "about_button"><a href="about.html"><button>About</button></a></div>
+  <div class = "sources_button"><a href="sourcespage.html"><button>Sources</button></a></div>
+  <p></p>
+</div>
+
+<br>
+
+<div class = "settings_visualizer_holder" >
+  <div class = "visualizer">
+    <h1>Data Visualizer</h1>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+	<div id="map" style="width: 95% ; height: 550px; position:relative; top:-73px; margin: auto;  border: 3px solid navy; padding: 0px;" ></div>
+	
+	<script>
+
+	var ZipcodeToggle = { '21201': true, '21202':true, '21203':true, '21204':true, '21205':true, '21206':true, '21207':true, '21208':true, '21209':true, 
+			'21210': true, '21211': true, '21212': true, '21218': true, '21222': true, '21223': true, '21224': true, '21225': true, '21226': true, 
+			'21227': true, '21229': true, '21230': true, '21231': true, '21232': true, '21233': true, '21234': true, '21236': true, '21237': true, 
+			'21239': true, '21251': true};
+			
+	async function fetchData(){
+		await fetch('http://127.0.0.1:5000/crime')
+			.then(response => response.json())
+			.then(geojsonH => {
+				console.log("Fetch 1");
+			});
+				
+		await fetch('http://127.0.0.1:5000/zipcodes')
+			.then(response => response.json())
+			.then(geojsonZ => {
+				console.log("Fetch 2");
+			});
+		console.log("Fetchs two");
+	}
+	
+	
+	const map = L.map('map').setView([39.2904,-76.6122], 11);
+
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+	}).addTo(map);
+	
+	var geojsonH;
+	var crimeData;
+	var coordinatesHeatCrime = [];
+	var heatmap;
+	
+	fetchData();
+	
+	fetch('http://127.0.0.1:5000/crime')
+		.then(response => response.json())
+		.then(geojsonH => {
+			for (var date in geojsonH) {
+				for (var entry in geojsonH[date]){
+					
+					coordinatesHeatCrime.push([geojsonH[date][entry]['y'], geojsonH[date][entry]['x']])
+				}
+			}
+			crimeData = geojsonH;
+			heatmap = L.heatLayer(coordinatesHeatCrime, {
+				radius: 10,
+				blur: 10,
+				gradient: {
+					0.4: 'blue',
+					0.65: 'lime',
+					1: 'red'
+				}
+			});
+		});
+	
+	var geojsonZ;
+	var geojsonZ2;
+	
+
+		
+	
+	var zipcodeToggledLayer = new L.FeatureGroup();
+
+	var geojsonForRender;
+	var PolygonLayer;
+
+	fetch('http://127.0.0.1:5000/zipcodes')
+		.then(response => response.json())
+		.then(geojsonZ => {
+			// add the polygons from the GeoJSON file to the map
+			for(var zipcode in geojsonZ['features']){
+				ZipcodeToggle[geojsonZ['features'][zipcode]['properties']['ZCTA5CE10']] = true	
+			}
+			geojsonForRender = geojsonZ;
+			PolygonLayer = L.geoJSON(geojsonZ, {
+			// specify options for the polygons
+			style: function(feature) {
+				return {
+					color: 'blue',
+					fillColor: '#0F0',
+					fillOpacity: 0.0
+				};
+			}
+		});
+		
+	});
+	
+	var startDate;
+	var endDate;
+	
+	
+	var geojsonC;
+	
+	var covidDataSet;
+	var zip_code_totals = {};
+	var zip_code_sum = 0;
+	fetch('http://127.0.0.1:5000/covid')
+		.then(response => response.json())
+		.then(geojsonC => {
+			covidDataSet = geojsonC
+			var lastKey = Object.keys(covidDataSet)[Object.keys(covidDataSet).length - 1]
+			for (var zipcode in covidDataSet[lastKey]) {
+				zip_code_sum += covidDataSet[lastKey][zipcode]['total']
+				zip_code_totals[zipcode] = covidDataSet[lastKey][zipcode]['total']
+			}
+			endDate = Object.keys(covidDataSet)[Object.keys(covidDataSet).length-1];
+			startDate = Object.keys(covidDataSet)[0];
+			
+			PolygonLayer = L.geoJSON(geojsonForRender, {
+				// specify options for the polygons
+				onEachFeature: function(feature, layer) {
+					layer.bindPopup('<h1>' + feature['properties']['ZCTA5CE10'] + '</h1><p>Total: ' + zip_code_totals[feature['properties']['ZCTA5CE10']] + '</p>');
+				},
+				style: function(feature) {
+				
+					console.log('SUM TOTALSSS: ',zip_code_totals[feature['properties']['ZCTA5CE10']] / zip_code_sum, 'ZipcodeTotal: ', zip_code_totals[feature['properties']['ZCTA5CE10']]);
+					return {
+						color: 'blue',
+						fillColor: '#0F0',
+						fillOpacity: zip_code_totals[feature['properties']['ZCTA5CE10']] /(zip_code_sum / 15)
+					};
+				}
+			}).addTo(map);
+			
+			console.log(zip_code_sum);
+			console.log(zip_code_totals)
+			console.log(covidDataSet);
+		});
+
+
+	
+	
+	var landmarkCoords = [];
+	var landmarkNames = [];
+	var geojsonM;
+	var landmarks = new L.FeatureGroup();
+	
+	
+	
+	fetch('http://127.0.0.1:5000/landmarks')
+		.then(response => response.json())
+		.then(geojsonM => {
+			for (var mon in geojsonM){
+				landmarkCoords.push([geojsonM[mon]['y'], geojsonM[mon]['x']]);
+				landmarkNames.push([geojsonM[mon]['name']]);
+			}
+			
+			for(var x in landmarkCoords){
+				var marker = L.marker(landmarkCoords[x]);
+				landmarks.addLayer(marker);
+				marker.bindPopup(landmarkNames[x][0]);
+			}	
+			
+		});
+	
+	var landmarksToggle = false;
+	
+	function toggleLandmarks(){
+	
+		if(document.getElementById("POIs").checked && map.getZoom() < 14){
+			console.log("show places")
+			landmarksToggle = true;
+			map.addLayer(landmarks);
+		}
+		else if (!document.getElementById("POIs").checked){
+			console.log("hide places")
+			landmarksToggle = false;
+			map.removeLayer(landmarks);
+		}else if(document.getElementById("POIs").checked && map.getZoom() > 14){
+			landmarksToggle = true;
+		}
+	}
+	
+	map.on('zoomend', function() {
+	
+		if(landmarksToggle){
+			if(map.getZoom() < 14){
+				map.removeLayer(landmarks);
+			}
+			else{
+				map.addLayer(landmarks);
+			}
+		}
+	});
+	
+	function rebuild() {
+		var wanted = {'type': 'FeatureCollection', 'features': []}
+		for (var index in geojsonForRender['features']) {
+			if (ZipcodeToggle[geojsonForRender['features'][index]['properties']['ZCTA5CE10']]) {
+				wanted['features'].push(geojsonForRender['features'][index])
+			}
+		}
+		return wanted
+	}
+	
+	var dataSet = 'Covid';
+	
+	function ZipcodeCheckbox(zipcode){
+		if(document.getElementById(zipcode).checked){
+			ZipcodeToggle[zipcode] = true;
+			console.log(zipcode + " checked");
+		}
+		else{
+			ZipcodeToggle[zipcode] = false;
+			console.log(zipcode + " unchecked");
+		}
+		map.removeLayer(PolygonLayer);
+		if(dataSet == 'Covid'){
+			PolygonLayer = L.geoJSON(rebuild(), {
+					// specify options for the polygons
+					onEachFeature: function(feature, layer) {
+						layer.bindPopup('<h1>' + feature['properties']['ZCTA5CE10'] + '</h1><p>Total: ' + zip_code_totals[feature['properties']['ZCTA5CE10']] + '</p>');
+					},
+					style: function(feature) {
+						return {
+							color: 'blue',
+							fillColor: '#0F0',
+							fillOpacity: zip_code_totals[feature['properties']['ZCTA5CE10']] /(zip_code_sum / 15)
+						};
+					}
+			}).addTo(map);
+		}else{
+			PolygonLayer = L.geoJSON(rebuild(), {
+				// specify options for the polygons
+				onEachFeature: function(feature, layer) {
+					layer.bindPopup('<h1>' + feature['properties']['ZCTA5CE10'] + '</h1><p>Total: ' + zip_code_totals[feature['properties']['ZCTA5CE10']] + '</p>');
+				},
+				style: function(feature) {
+					return {
+						color: 'blue',
+						fillColor: '#0F0',
+						fillOpacity: zip_code_totals[feature['properties']['ZCTA5CE10']] /(zip_code_sum / 15)
+					};
+				}
+			});
+		}
+	}
+
+	function DataSetChange(dataset){
+		if(dataset === "crime") {
+			console.log("user chose crime");
+			map.removeLayer(PolygonLayer);
+			map.addLayer(heatmap);
+			dataSet= 'Crime';
+		}
+		else if(dataset === "covid"){
+			console.log("user chose covid");
+			map.removeLayer(heatmap);
+			map.addLayer(PolygonLayer);
+			dataSet = 'Covid';
+		}
+	}
+
+	
+	function crimeRebuild(){
+		var found_bottom = false;
+		var found_top = false;
+		var sum = 0;
+		coordinatesHeatCrime = [];
+		for (var x in crimeData) {
+			if (x == startDate) {
+				found_bottom = true;
+				for (var index in crimeData[x]) {
+					coordinatesHeatCrime.push([crimeData[x][index]['y'], crimeData[x][index]['x']])
+				}
+			}
+			if (x == endDate){
+				found_top = true;
+			}
+			if (found_bottom == true && found_top != true) {
+				for (var index in crimeData[x]) {
+					coordinatesHeatCrime.push([crimeData[x][index]['y'], crimeData[x][index]['x']])
+				}
+			}
+		}
+		
+		map.removeLayer(heatmap);
+		if (dataSet == 'Crime') {
+			heatmap = L.heatLayer(coordinatesHeatCrime, {
+					radius: 10,
+					blur: 10,
+					gradient: {
+						0.4: 'blue',
+						0.65: 'lime',
+						1: 'red'
+					}
+				}).addTo(map);
+		} else {
+			heatmap = L.heatLayer(coordinatesHeatCrime, {
+				radius: 10,
+				blur: 10,
+				gradient: {
+					0.4: 'blue',
+					0.65: 'lime',
+					1: 'red'
+				}
+			});
+		}
+	}
+
+	function covidRebuild(){
+		zip_code_sum = 0
+		for (var zipcode in covidDataSet[endDate]) {
+			zip_code_sum += (covidDataSet[endDate][zipcode]['total'] - covidDataSet[startDate][zipcode]['total'])
+			zip_code_totals[zipcode] = covidDataSet[endDate][zipcode]['total'] - covidDataSet[startDate][zipcode]['total'] 
+		}
+		
+		console.log(zip_code_sum);
+		console.log(zip_code_totals)
+		console.log(covidDataSet);
+		
+		map.removeLayer(PolygonLayer);
+		if(dataSet == 'Covid'){
+			PolygonLayer = L.geoJSON(rebuild(), {
+					// specify options for the polygons
+					onEachFeature: function(feature, layer) {
+						layer.bindPopup('<h1>' + feature['properties']['ZCTA5CE10'] + '</h1><p>Total: ' + zip_code_totals[feature['properties']['ZCTA5CE10']] + '</p>');
+					},
+					style: function(feature) {
+						return {
+							color: 'blue',
+							fillColor: '#0F0',
+							fillOpacity: zip_code_totals[feature['properties']['ZCTA5CE10']] /(zip_code_sum / 15)
+						};
+					}
+			}).addTo(map);
+		}else{
+			PolygonLayer = L.geoJSON(rebuild(), {
+				// specify options for the polygons
+				onEachFeature: function(feature, layer) {
+					layer.bindPopup('<h1>' + feature['properties']['ZCTA5CE10'] + '</h1><p>Total: ' + zip_code_totals[feature['properties']['ZCTA5CE10']] + '</p>');
+				},
+				style: function(feature) {
+					return {
+						color: 'blue',
+						fillColor: '#0F0',
+						fillOpacity: zip_code_totals[feature['properties']['ZCTA5CE10']] /(zip_code_sum / 15)
+					};
+				}
+			});
+		}
+	}
+
+	function startDateChange(date){
+		date = date.replaceAll('-', '/')
+		console.log("Set start date to:", date)
+		if(date in covidDataSet && date in crimeData){
+			console.log("Valid Date found")
+			startDate = date;
+			crimeRebuild();
+			covidRebuild();
+		}
+		
+	}	
+	
+	function endDateChange(date){
+		date = date.replaceAll('-', '/')
+		console.log("Set end date to:", date)
+		if(date in covidDataSet && date in crimeData){
+			console.log("Valid Date found")
+			endDate = date;
+			crimeRebuild();
+			covidRebuild();
+		}
+	}
+
+</script>
+	
+  </div>
+
+  <section class = "settings">
+    <h1>Filter By</h1>
+
+    <!--change dataset-->
+    <header>Data set</header>
+    <select id = "dataset_filter" onchange="DataSetChange(value)">
+      <option value="covid">Covid</option>
+      <option value="crime">Crime</option>
+    </select>
+    <br>
+    <br>
+
+    <!--filter by dates-->
+    <header>Date</header>
+    <input type="date" onchange="startDateChange(value)">
+    <header>to</header>
+    <input type="date" onchange="endDateChange(value)">
+    <br>
+    <br>
+
+    <!--filter by zipcode-->
+    <header>Zipcode</header>
+    <input type = "checkbox" id = "21201" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21201">21201</label>
+    <input type = "checkbox" id = "21202" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21202">21202</label>
+    <input type = "checkbox" id = "21203" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21203">21203</label>
+    <input type = "checkbox" id = "21205" onchange="ZipcodeCheckbox(id)" checked> 
+    <label for="21205">21205</label>
+    <input type = "checkbox" id = "21206" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21206">21206</label>
+    <input type = "checkbox" id = "21207" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21207">21207</label>
+    <input type = "checkbox" id = "21208" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21208">21208</label>
+    <input type = "checkbox" id = "21209" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21209">21209</label>
+    <input type = "checkbox" id = "21210" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21210">21210</label>
+    <input type = "checkbox" id = "21211" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21211">21211</label>
+    <input type = "checkbox" id = "21212" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21212">21212</label>
+    <input type = "checkbox" id = "21213" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21213">21213</label>
+    <input type = "checkbox" id = "21214" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21214">21214</label>
+    <input type = "checkbox" id = "21215" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21215">21215</label>
+    <input type = "checkbox" id = "21216" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21216">21216</label>
+    <input type = "checkbox" id = "21217" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21217">21217</label>
+    <input type = "checkbox" id = "21218" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21218">21218</label>
+    <input type = "checkbox" id = "21222" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21222">21222</label>
+    <input type = "checkbox" id = "21223" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21223">21223</label>
+    <input type = "checkbox" id = "21224" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21224">21224</label>
+    <input type = "checkbox" id = "21225" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21225">21225</label>
+    <input type = "checkbox" id = "21226" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21226">21226</label>
+    <input type = "checkbox" id = "21227" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21227">21227</label>
+    <input type = "checkbox" id = "21229" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21229">21229</label>
+    <input type = "checkbox" id = "21230" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21230">21230</label>
+    <input type = "checkbox" id = "21231" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21231">21231</label>
+    <input type = "checkbox" id = "21233" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21233">21233</label>
+    <input type = "checkbox" id = "21234" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21234">21234</label>
+    <input type = "checkbox" id = "21236" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21236">21236</label>
+    <input type = "checkbox" id = "21237" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21237">21237</label>
+    <input type = "checkbox" id = "21239" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21239">21239</label>
+    <input type = "checkbox" id = "21251" onchange="ZipcodeCheckbox(id)" checked>
+    <label for="21251">21251</label>
+    <br>
+    <br>
+
+    <!--filter by places-->
+    <header>Places</header>
+    <input type = "checkbox" id = "POIs" onchange="toggleLandmarks()">
+    <label for="POIs">Toggle Landmarks</label>
+    <br>
+    <br>
+
+    <!--filter by moving average-->
+   
+    
+  </section>
+</div>
+
+<div class = "charts_header">
+  <h1>Data Charts</h1>
+</div>
+
+<div class = "charts_container">
+  <div class = "charts">
+    <canvas id = "chart_one"></canvas>
+    <canvas id = "chart_two"></canvas>
+    <canvas id = "chart_three"></canvas>
+  </div>
+</div>
+
+<br>
+
+<div class = "charts_container">
+  <div class = "charts">
+    <canvas id = "chart_four"></canvas>
+    <canvas id = "chart_five"></canvas>
+  </div>
+</div>
+
+<script src = "charts.js"></script>
+
+<!--<div class = "charts_container_two">-->
+<!--  <div class = "charts_two">-->
+<!--    <canvas id = "chart_four"></canvas>-->
+
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class = "charts_container">-->
+<!--  <div class = "charts">-->
+<!--    <canvas id = "chart_one"></canvas>-->
+<!--    <canvas id = "chart_three"></canvas>-->
+<!--    <canvas id = "chart_two"></canvas>-->
+
+<!--    <script src = "charts.js"></script>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class = "charts_container_two">-->
+<!--  <div class = "charts_two">-->
+<!--    <canvas id = "chart_four"></canvas>-->
+
+<!--  </div>-->
+<!--</div>-->
+
+</body>
+</html>
+
