@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src = "main.js"></script>
+
+<body>
+
+<link rel="stylesheet" href="index.css">
+
+
+
+<div class = "banner">
+  <header>Crime and Covid Data Visualization</header>
+  <div class = "about_button"><a href="about.html"><button>About</button></a></div>
+  <div class = "sources_button"><a href="sourcespage.html"><button>Sources</button></a></div>
+  <p>this is a test header</p>
+</div>
+
+<br>
+
+<div class = "settings_visualizer_holder" >
+  <div class = "visualizer">
+    <h1>Data Visualizer</h1>
+  </div>
+
+  <section class = "settings">
+    <h1>Filter By</h1>
+
+    <!--change dataset-->
+    <header>Date set</header>
+    <select id = "dataset_filter" onchange="DataSetChange(value)">
+      <option value="covid">Covid</option>
+      <option value="crime">Crime</option>
+    </select>
+    <br>
+    <br>
+
+    <!--filter by dates-->
+    <header>Date</header>
+    <input type="date" onchange="StartDateChanged(value)">
+    <header>to</header>
+    <input type="date" onchange="EndDateChanged(value)">
+    <br>
+    <br>
+
+    <!--filter by zipcode-->
+    <header>Zipcode</header>
+    <input type = "checkbox" id = "21201" onchange="ZipcodeCheckbox(id)">
+    <label for="21201">21201</label>
+    <input type = "checkbox" id = "21202" onchange="ZipcodeCheckbox(id)">
+    <label for="21202">21202</label>
+    <input type = "checkbox" id = "21203" onchange="ZipcodeCheckbox(id)">
+    <label for="21203">21203</label>
+    <input type = "checkbox" id = "21204" onchange="ZipcodeCheckbox(id)">
+    <label for="21204">21204</label>
+    <input type = "checkbox" id = "21205" onchange="ZipcodeCheckbox(id)">
+    <label for="21205">21205</label>
+    <input type = "checkbox" id = "21206" onchange="ZipcodeCheckbox(id)">
+    <label for="21206">21206</label>
+    <input type = "checkbox" id = "21207" onchange="ZipcodeCheckbox(id)">
+    <label for="21207">21207</label>
+    <input type = "checkbox" id = "21208" onchange="ZipcodeCheckbox(id)">
+    <label for="21208">21208</label>
+    <input type = "checkbox" id = "21209" onchange="ZipcodeCheckbox(id)">
+    <label for="21209">21209</label>
+    <input type = "checkbox" id = "21210" onchange="ZipcodeCheckbox(id)">
+    <label for="21210">21210</label>
+    <input type = "checkbox" id = "21211" onchange="ZipcodeCheckbox(id)">
+    <label for="21211">21211</label>
+    <input type = "checkbox" id = "21212" onchange="ZipcodeCheckbox(id)">
+    <label for="21212">21212</label>
+    <input type = "checkbox" id = "21213" onchange="ZipcodeCheckbox(id)">
+    <label for="21213">21213</label>
+    <input type = "checkbox" id = "21214" onchange="ZipcodeCheckbox(id)">
+    <label for="21214">21214</label>
+    <input type = "checkbox" id = "21215" onchange="ZipcodeCheckbox(id)">
+    <label for="21215">21215</label>
+    <input type = "checkbox" id = "21216" onchange="ZipcodeCheckbox(id)">
+    <label for="21216">21216</label>
+    <input type = "checkbox" id = "21217" onchange="ZipcodeCheckbox(id)">
+    <label for="21217">21217</label>
+    <input type = "checkbox" id = "21218" onchange="ZipcodeCheckbox(id)">
+    <label for="21218">21218</label>
+    <input type = "checkbox" id = "21222" onchange="ZipcodeCheckbox(id)">
+    <label for="21222">21222</label>
+    <input type = "checkbox" id = "21223" onchange="ZipcodeCheckbox(id)">
+    <label for="21223">21223</label>
+    <input type = "checkbox" id = "212224" onchange="ZipcodeCheckbox(id)">
+    <label for="212224">212224</label>
+    <input type = "checkbox" id = "21225" onchange="ZipcodeCheckbox(id)">
+    <label for="21225">21225</label>
+    <input type = "checkbox" id = "21226" onchange="ZipcodeCheckbox(id)">
+    <label for="21226">21226</label>
+    <input type = "checkbox" id = "21227" onchange="ZipcodeCheckbox(id)">
+    <label for="21227">21227</label>
+    <input type = "checkbox" id = "21229" onchange="ZipcodeCheckbox(id)">
+    <label for="21229">21229</label>
+    <input type = "checkbox" id = "21230" onchange="ZipcodeCheckbox(id)">
+    <label for="21230">21230</label>
+    <input type = "checkbox" id = "21231" onchange="ZipcodeCheckbox(id)">
+    <label for="21231">21231</label>
+    <input type = "checkbox" id = "21233" onchange="ZipcodeCheckbox(id)">
+    <label for="21233">21233</label>
+    <input type = "checkbox" id = "21234" onchange="ZipcodeCheckbox(id)">
+    <label for="21234">21234</label>
+    <input type = "checkbox" id = "21236" onchange="ZipcodeCheckbox(id)">
+    <label for="21236">21236</label>
+    <input type = "checkbox" id = "21237" onchange="ZipcodeCheckbox(id)">
+    <label for="21237">21237</label>
+    <input type = "checkbox" id = "21239" onchange="ZipcodeCheckbox(id)">
+    <label for="21239">21239</label>
+    <input type = "checkbox" id = "21251" onchange="ZipcodeCheckbox(id)">
+    <label for="21251">21251</label>
+    <br>
+    <br>
+
+    <!--filter by places-->
+    <header>Places</header>
+    <input type = "checkbox" id = "POIs" onchange="TogglePlaces()">
+    <label for="POIs">Toggle Landmarks</label>
+    <br>
+    <input type = "checkbox" id = "food_places" onchange="ToggleFoodVendors()">
+    <label for="food_places">Toggle Food Vendors</label>
+    <br>
+    <br>
+
+    <!--filter by moving average-->
+    <header>Moving Average (put this in dataset dropdown?)</header>
+    <input type = "checkbox" id = "m_average">
+    <label for="m_average">Toggle Moving Average</label>
+    <br>
+    <br>
+
+    <!--filter by weapon-->
+    <header>Weapon</header>
+    <br>
+    <br>
+
+    <!--filter by crime type-->
+    <header>Crime Type</header>
+    <br>
+    <br>
+
+    <!--filter by crime type-->
+    <header>Gender</header>
+  </section>
+</div>
+
+<div class = "charts_header">
+  <h1>Data Charts</h1>
+</div>
+
+<div class = "charts_container">
+  <div class = "charts">
+    <canvas id = "chart_one"></canvas>
+    <canvas id = "chart_two"></canvas>
+    <canvas id = "chart_three"></canvas>
+  </div>
+</div>
+
+<br>
+
+<div class = "charts_container">
+  <div class = "charts">
+    <canvas id = "chart_four"></canvas>
+    <canvas id = "chart_five"></canvas>
+  </div>
+</div>
+
+<script src = "charts.js"></script>
+
+<!--<div class = "charts_container_two">-->
+<!--  <div class = "charts_two">-->
+<!--    <canvas id = "chart_four"></canvas>-->
+
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class = "charts_container">-->
+<!--  <div class = "charts">-->
+<!--    <canvas id = "chart_one"></canvas>-->
+<!--    <canvas id = "chart_three"></canvas>-->
+<!--    <canvas id = "chart_two"></canvas>-->
+
+<!--    <script src = "charts.js"></script>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class = "charts_container_two">-->
+<!--  <div class = "charts_two">-->
+<!--    <canvas id = "chart_four"></canvas>-->
+
+<!--  </div>-->
+<!--</div>-->
+
+</body>
+</html>
+

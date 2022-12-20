@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<body>
+
+<link rel="stylesheet" href="index.css">
+
+<div class = "banner">
+  <header>Crime and Covid Data Visualization</header>
+  <div class = "about_button"><a href="about.html"><button>About</button></a></div>
+  <div class = "sources_button"><a href="sourcespage.html"><button>Sources</button></a></div>
+</div>
+
+<br>
+
+<div class = "settings_visualizer_holder" >
+  <div class = "visualizer">
+    <h1>Data Visualizer</h1>
+  </div>
+
+  <section class = "settings">
+    <h1>Filter By</h1>
+
+    <!--change dataset-->
+    <header>Date set</header>
+    <select id = "dataset_filter">
+      <option value="covid">Covid</option>
+      <option value="crime">Crime</option>
+    </select>
+    <br>
+    <br>
+
+    <!--filter by dates-->
+    <header>Date</header>
+    <input type="date">
+    <header>to</header>
+    <input type="date">
+    <br>
+    <br>
+
+    <!--filter by zipcode-->
+    <header>Zipcode</header>
+    <input type = "checkbox" id = "first_zip">
+    <label for="first_zip">21201</label>
+    <input type = "checkbox" id = "second_zip">
+    <label for="second_zip">21202</label>
+    <input type = "checkbox" id = "third_zip">
+    <label for="third_zip">21203</label>
+    <input type = "checkbox" id = "fourth_zip">
+    <label for="fourth_zip">21204</label>
+    <input type = "checkbox" id = "fifth_zip">
+    <label for="fifth_zip">21205</label>
+    <input type = "checkbox" id = "sixth_zip">
+    <label for="sixth_zip">21206</label>
+    <input type = "checkbox" id = "seventh_zip">
+    <label for="seventh_zip">21207</label>
+    <input type = "checkbox" id = "eighth_zip">
+    <label for="eighth_zip">21208</label>
+    <br>
+    <br>
+
+    <!--filter by places-->
+    <header>Places</header>
+    <input type = "checkbox" id = "POIs">
+    <label for="POIs">Toggle Points of Interest</label>
+    <br>
+    <input type = "checkbox" id = "food_places">
+    <label for="food_places">Toggle Food Establishments</label>
+    <br>
+    <br>
+
+    <!--filter by moving average-->
+    <header>Moving Average (put this in dataset dropdown?)</header>
+    <input type = "checkbox" id = "m_average">
+    <label for="m_average">Toggle Moving Average</label>
+    <br>
+    <br>
+
+    <!--filter by weapon-->
+    <header>Weapon</header>
+    <br>
+    <br>
+
+    <!--filter by crime type-->
+    <header>Crime Type</header>
+    <br>
+    <br>
+
+    <!--filter by crime type-->
+    <header>Gender</header>
+  </section>
+</div>
+
+
+
+<div class = "charts_header">
+  <h1>Data Charts</h1>
+</div>
+
+<div class = "charts_container">
+  <div class = "charts">
+    <canvas id = "chart_one"></canvas>
+    <canvas id = "chart_three"></canvas>
+    <canvas id = "chart_two"></canvas>
+
+    <script src = "charts.js"></script>
+  </div>
+</div>
+
+
+<!--</body>-->
+<!--</html>-->
+
+<!--<!doctype html>-->
+<!--<html>-->
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>-->
+
+<!--<body>-->
+
+<!--<link rel="stylesheet" href="index.css">-->
+
+<!--<div class = "banner">-->
+<!--  <header>Crime and Covid Data Visualization</header>-->
+<!--  <a href="about.html"><button>About</button></a>-->
+
+<!--</div>-->
+
+<!--<br>-->
+
+<!--<div class = "settings_visualizer_holder">-->
+
+
+<!--</div>-->
+
+<!--<div class = "visualizer">-->
+<!--  <h1>Data Visualizer</h1>-->
+
+<!--  <div class = "datetime"><button>Date/Time Settings</button></div>-->
+<!--</div>-->
+
+<!--<div class = "checkboxes">-->
+<!--  <h1>Filter Data</h1>-->
+<!--</div>-->
+
+<!--<div class = "charts_header">-->
+<!--  <h1>Data Charts</h1>-->
+<!--</div>-->
+
+
+<!--<div class = "charts">-->
+<!--  <canvas id = "chart_one"></canvas>-->
+<!--  <canvas id = "chart_two"></canvas>-->
+
+<!--  <script src = "charts.js"></script>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
